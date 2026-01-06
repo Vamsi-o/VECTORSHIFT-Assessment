@@ -6,7 +6,6 @@ from typing import List, Dict
 
 app = FastAPI()
 
-# Enable CORS for frontend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
