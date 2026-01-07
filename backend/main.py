@@ -6,6 +6,10 @@ from typing import List, Dict
 
 app = FastAPI()
 
+
+
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
