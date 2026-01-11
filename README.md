@@ -87,5 +87,5 @@ uvicorn main:app --reload
 
 ## Tech Stack
 
-React • ReactFlow • Zustand • FastAPI • Python
+React • ReactFlow • FastAPI • Python
 ````
