@@ -78,7 +78,6 @@ export const PipelineUI = () => {
 
   return (
     <>
-      {/* ReactFlow Canvas */}
       <div ref={reactFlowWrapper} style={{ width: '100vw', height: '100vh' }}>
         <ReactFlow
           nodes={nodes}
@@ -99,7 +98,6 @@ export const PipelineUI = () => {
         </ReactFlow>
       </div>
 
-      {/* Submit Button - Only ONE instance */}
       <SubmitButton />
     </>
   );

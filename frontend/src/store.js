@@ -1,4 +1,3 @@
-// store.js
 
 import { create } from "zustand";
 import {
@@ -48,16 +47,12 @@ export const useStore = create((set, get) => ({
       ),
     });
   },
-  // FIRST PRINCIPLE: Update a specific node's data without replacing the whole node
   updateNodeData: (nodeId, newData) => {
     set({
       nodes: get().nodes.map((node) => {
-        // Find the node that matches the ID
         if (node.id === nodeId) {
-          // Spread operator: Keep everything, but update data
           return { ...node, data: { ...node.data, ...newData } };
         }
-        // Other nodes stay unchanged
         return node;
       }),
     });

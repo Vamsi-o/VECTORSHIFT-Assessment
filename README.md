@@ -1,8 +1,12 @@
+# VectorShift Frontend Assessment
+
 # VectorShift Pipeline Builder
 
 Visual workflow builder with node-based architecture and DAG validation.
 
 ## What I Built
+
+![alt text](<Screenshot from 2026-01-11 12-15-31.png>)
 
 ### Part 1: Node Abstraction
 
@@ -27,7 +31,20 @@ Text node parses `{{ variableName }}` syntax and creates input handles automatic
 - DFS algorithm detects cycles (DAG validation)
 - Returns: `{num_nodes, num_edges, is_dag}`
 
----
+## Features
+
+- **5 Node Types**: Input, Output, LLM, Text, Transform/Filter, Delay
+- **Dynamic Handles**: `{{variable}}` in Text nodes creates input handles
+- **DAG Validation**: Cycle detection frontend + backend
+- **Submit Pipeline**: POST `/api/pipelines/parse`
+- **Production UI**: Matches VectorShift design system
+
+## Quick Test
+
+1. Add Input → Text → LLM → Output
+2. Connect `{{input}}` from Text to LLM
+3. Submit → `{num_nodes: 4, num_edges: 3, is_dag: true}`
+4. Create cycle → Error shown
 
 ## Architecture Decisions
 
@@ -73,21 +90,3 @@ uvicorn main:app --reload
 
 React • ReactFlow • Zustand • FastAPI • Python
 ````
-
-## Project Structure
-
-```
-frontend/src/
-  ├── nodes/
-  │   ├── BaseNode.jsx       # Core abstraction
-  │   ├── inputNode.js
-  │   ├── textNode.js        # Dynamic handles
-  │   └── [7 more nodes]
-  ├── toolbar.js             # Drag-drop interface
-  ├── ui.js                  # ReactFlow canvas
-  ├── submit.js              # Backend integration
-  └── store.js               # State management
-
-backend/
-  └── main.py                # FastAPI + DAG validation
-```

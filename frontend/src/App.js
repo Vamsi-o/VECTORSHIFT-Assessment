@@ -12,7 +12,6 @@ function App() {
     }}>
       <PipelineToolbar />
       
-      {/* Canvas + Submit - takes remaining space */}
       <PipelineUI />
     </div>
   );

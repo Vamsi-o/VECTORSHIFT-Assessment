@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden; /* ADDED: Prevent scrolling */
-  height: 100vh;    /* ADDED: Full viewport height */
+  overflow: hidden; 
+  height: 100vh;   
 }
 
 code {
@@ -14,7 +14,6 @@ code {
     monospace;
 }
 
-/* ADDED: Ensure root takes full height */
 #root {
   height: 100vh;
   overflow: hidden;

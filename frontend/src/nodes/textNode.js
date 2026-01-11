@@ -38,7 +38,6 @@ export const TextNode = ({ id, data }) => {
         Text
       </div>
 
-      {/* IMPROVED HANDLES WITH LABELS */}
       {variables.map((varName, index) => (
         <div key={varName}>
           <Handle
